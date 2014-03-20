@@ -1,6 +1,6 @@
 class VendEndpoint < EndpointBase::Sinatra::Base
   post '/add_product' do
-    ap @options
+    ap @config
 
     product = @payload['product']
     out = {
