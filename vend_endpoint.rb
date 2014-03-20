@@ -1,9 +1,21 @@
 class VendEndpoint < EndpointBase::Sinatra::Base
-  post '/add_product' do
-    ap @config
-    ap request.env
+  endpoint_key '5329f763b439577c52013fd0'
+  
+  def vend 
+    username = @config[:vend1]
+    @vend ||= Vend::Client.new('reformation','spree','spreevend8942')
+  end
 
+
+  post '/add_product' do
     product = @payload['product']
+
+    # if product[:parent_id]
+    #   vend_products = vend.Products.all
+
+    #   match = vend_products.find{|p|p.variant_}
+    # end
+
     out = {
       source_id: product[:parent_id],
       source_variant_id: product[:id],
@@ -24,10 +36,7 @@ class VendEndpoint < EndpointBase::Sinatra::Base
       out[:name] << " - " + out[:variant_option_one_value]
     end
 
-    vend =       Vend::Client.new(
-        'reformation',
-        'spree',
-        'spreevend8942')
+
 
     resp = vend.request('products', method: :post, body: out.to_json)
 

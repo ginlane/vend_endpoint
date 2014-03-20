@@ -7,9 +7,9 @@ GIT
 
 GIT
   remote: git@github.com:spree/endpoint_base.git
-  revision: a0f1a1f1db5a4db9a2ff8f944e80b5e2bfbf2115
+  revision: a83c7db2e9252d74791bf307acfd7b4ff491437e
   specs:
-    endpoint_base (0.2)
+    endpoint_base (0.3)
       activesupport
       jbuilder
       json
@@ -38,7 +38,7 @@ GEM
     kgio (2.9.2)
     method_source (0.8.2)
     minitest (4.7.5)
-    multi_json (1.9.0)
+    multi_json (1.9.2)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
