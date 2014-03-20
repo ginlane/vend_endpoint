@@ -1,6 +1,7 @@
 class VendEndpoint < EndpointBase::Sinatra::Base
   post '/add_product' do
     ap @config
+    ap request.env
 
     product = @payload['product']
     out = {
